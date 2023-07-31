@@ -6,9 +6,20 @@
 //
 
 #include <iostream>
+#include <cctype>
+
+#include "stack.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    using namespace std;
+    Stack st;
+    char ch;
+    unsigned long po;
+    cout << "Please enter A to add a purchase order,\n"
+    << "P to process a PO, or Q to quit.\n";
+    while (cin >> ch && toupper(ch) != 'Q') {
+        
+    }
+    
     return 0;
 }
