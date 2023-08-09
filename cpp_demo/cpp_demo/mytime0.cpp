@@ -40,6 +40,29 @@ Time Time::operator+(const Time &t) const {
     return sum;
 }
 
+Time Time::operator-(const Time &t) const {
+    Time diff;
+    int tot1, tot2;
+    tot1 = t.minutes + t.hours * 60;
+    tot2 = minutes + hours * 60;
+    diff.minutes = (tot2 - tot1) % 60;
+    diff.hours = (tot2 - tot1) / 60;
+    return diff;
+}
+
+Time Time::operator*(double mult) const {
+    Time result;
+    long totalMin = hours * mult * 60 + minutes * mult;
+    result.hours = (int)(totalMin / 60);
+    result.minutes = totalMin % 60;
+    return result;
+}
+
+std::ostream & operator<<(std::ostream &os, const Time &t) {
+   os << t.hours << " hours, " << t.minutes << " minutes.\n";
+   return os;
+}
+
 void Time::show() const {
     std::cout << hours << " hours, " << minutes << " minutes.\n";
 }

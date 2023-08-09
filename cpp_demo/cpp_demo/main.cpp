@@ -71,11 +71,11 @@ int main() {
     coding.show();
     
     cout << "fixing time = ";
-    fixing.show();
+    cout << fixing;
     
     total = coding + fixing;
     cout << "coding.sum(fixing) = ";
-    total.show();
+    cout << total;
     
     return 0;
 }
