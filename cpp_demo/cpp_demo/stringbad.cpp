@@ -29,8 +29,27 @@ StringBad::StringBad() {
     cout << num_strings << ": \"" << str << "\" default object created\n";
 }
 
+StringBad::StringBad(const StringBad &st) {
+    num_strings++;
+    len = st.len;
+    str = new char [len + 1];
+    strcpy(str, st.str);
+    cout << num_strings << ": \"" << str << "\" default object created\n";
+}
+
+StringBad & StringBad::operator=(const StringBad &st) {
+    if (this == &st) {
+        return *this;
+    }
+    delete [] str;
+    len = st.len;
+    str = new char [len + 1];
+    strcpy(str, st.str);
+    return *this;
+}
+
 StringBad::~StringBad() {
-    cout << "\"" << str << "\" object deleted.";
+    cout << "\"" << str << "\" object deleted. ";
     --num_strings;
     cout << num_strings << " left\n";
     delete [] str;
