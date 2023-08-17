@@ -12,6 +12,7 @@
 #include "mytime0.hpp"
 #include "stonewt.hpp"
 #include "stringbad.hpp"
+#include "string.hpp"
 
 //int main(int argc, const char * argv[]) {
 //    using namespace std;
@@ -96,44 +97,50 @@
 //    cout << "Poppins: " << p_wt << " pounds.\n";
 //}
 
-void callme1(StringBad &);// pass by reference
-void callme2(StringBad);// pass by value
-
-using namespace std;
+//void callme1(StringBad &);// pass by reference
+//void callme2(StringBad);// pass by value
+//
+//using namespace std;
+//
+//int main() {
+//    {
+//        cout << "Starting an inner block.\n";
+//        StringBad headline1("Celery Stalks at Midnight");
+//        StringBad headline2("Lettuce Pery");
+//        StringBad sports("Spinach Leaves Bowl for Dollars");
+//        cout << "headline1: " << headline1 << endl;
+//        cout << "headline2: " << headline2 << endl;
+//        cout << "sports: " << sports << endl;
+//        callme1(headline1);
+//        cout << "headline1: " << headline1 << endl;
+//        callme2(headline2);
+//        cout << "headline2: " << headline2 << endl;
+//        cout << "Initialize one object to another:\n";
+//        StringBad sailor = sports;
+//        cout << "sailor: " << sailor << endl;
+//        cout << "Assign one object to another:\n";
+//        StringBad knot;
+//        knot = headline1;
+//        cout << "knot: " << knot << endl;
+//        cout << "Exiting the block.\n";
+//    }
+//    cout << "End of main()\n";
+//    return 0;
+//}
+//
+//void callme1(StringBad &rsb) {
+//    cout << "String passed by reference.\n";
+//    cout << "   \"" << rsb << "\"\n";
+//}
+//
+//void callme2(StringBad sb) {
+//    cout << "String passed by value.\n";
+//    cout << "   \"" << sb << "\"\n";
+//}
 
 int main() {
-    {
-        cout << "Starting an inner block.\n";
-        StringBad headline1("Celery Stalks at Midnight");
-        StringBad headline2("Lettuce Pery");
-        StringBad sports("Spinach Leaves Bowl for Dollars");
-        cout << "headline1: " << headline1 << endl;
-        cout << "headline2: " << headline2 << endl;
-        cout << "sports: " << sports << endl;
-        callme1(headline1);
-        cout << "headline1: " << headline1 << endl;
-        callme2(headline2);
-        cout << "headline2: " << headline2 << endl;
-        cout << "Initialize one object to another:\n";
-        StringBad sailor = sports;
-        cout << "sailor: " << sailor << endl;
-        cout << "Assign one object to another:\n";
-        StringBad knot;
-        knot = headline1;
-        cout << "knot: " << knot << endl;
-        cout << "Exiting the block.\n";
-    }
-    cout << "End of main()\n";
-    return 0;
+    using namespace std;
+    String name;
+    cin >> name;
+    cout << name.length() << endl;
 }
-
-void callme1(StringBad &rsb) {
-    cout << "String passed by reference.\n";
-    cout << "   \"" << rsb << "\"\n";
-}
-
-void callme2(StringBad sb) {
-    cout << "String passed by value.\n";
-    cout << "   \"" << sb << "\"\n";
-}
-
