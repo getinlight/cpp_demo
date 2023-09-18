@@ -138,9 +138,22 @@
 //    cout << "   \"" << sb << "\"\n";
 //}
 
+const int ArSize = 10;
+const int MaxLen = 81;
+
 int main() {
     using namespace std;
     String name;
+    cout << "Hi, what's your name?\n";
     cin >> name;
-    cout << name.length() << endl;
+    
+    cout << name << ", please enter up to " << ArSize
+    << " short sayings <empty line to quit>.\n";
+    String sayings[ArSize];
+    char temp[MaxLen];
+    int i;
+    for (i = 0; i < ArSize; i++) {
+        cout << i+1 << ": ";
+        
+    }
 }
