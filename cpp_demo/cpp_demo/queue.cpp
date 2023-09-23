@@ -22,9 +22,36 @@ bool Queue::enqueue(const Item &item) {
     items++;
     if (front == NULL) {
         front = add;
+    } else if (rear == NULL) {
+        front->next = add;
+        rear = add;
     } else {
         rear->next = add;
+        rear = add;
     }
-    rear = add;
     return true;
+}
+
+bool Queue::dequeue(Item &item) {
+    if (front == NULL) {
+        return false;
+    }
+    item = front->item;
+    items--;
+    Node *temp = front;
+    front = front->next;
+    delete temp;
+    if (items == 0) {
+        rear = NULL;
+    }
+    return true;
+}
+
+Queue::~Queue() {
+    Node *temp;
+    while (front != NULL) {
+        temp = front;
+        front = front->next;
+        delete temp;
+    }
 }
